@@ -23,6 +23,7 @@
 
   <script src="bower_components/leaflet-draw/dist/leaflet.draw.js"></script>
   <script src="bower_components/leaflet-geodesy/leaflet-geodesy.js"></script>
+
   <!--CSS-->
   <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="bower_components/leaflet-draw/dist/leaflet.draw.css">
@@ -55,16 +56,16 @@
     </md-list>
   </md-sidenav>
   <md-content flex id="content">
+
+    <!-- THE VIEW -->
     <div ng-view></div>
+
     <ul class="menu">
       <li><a href="#/view1">view1</a></li>
       <li><a href="#/view2">view2</a></li>
       <li><a href="#/view3">view3</a></li>
     </ul>
 
-
-    <!--THE VIEW-->
-    <div ng-view></div>
 
   </md-content>
 </div>
