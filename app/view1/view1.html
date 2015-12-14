@@ -1,37 +1,45 @@
-<div class= "map-right" id="map" style="width:  800px; height: 800px;"></div><!--
+<div class= "quest_map" id="map" style="width:  500px; height: 500px;"></div>
 
+<div ng-controller ="inputController" layout="column" ng-cloak class="md-inline-form form-left quest_form">
 
---><div ng-controller="QuestInputController" layout="column" ng-cloak class="md-inline-form form-left">
+    <md-content layout-padding >
 
-    <md-content layout-padding>
+        <md-whiteframe class="md-whiteframe-6dp"  layout layout-align="right top">
 
-        <form name="userForm">
+            <form name="userForm">
 
-            <div layout-gt-sm="row">
-                <md-input-container>
-                    <label>Titel</label>
-                    <input ng-model="user.title">
+                <div layout-gt-sm="row">
+                    <md-input-container>
+                        <label>Titel</label>
+                        <input ng-model="user.title">
+                    </md-input-container>
+                    <md-datepicker ng-model="user.submissionDate" md-placeholder="Enter date"></md-datepicker>
+                </div>
+
+                <md-input-container class="md-block">
+                    <label>Type Opdracht</label>
+                    <md-select ng-model="user.state">
+                        <md-option ng-repeat="state in states">
+                            {{state}}
+                        </md-option>
+                    </md-select>
                 </md-input-container>
-                <md-datepicker ng-model="user.submissionDate" md-placeholder="Enter date"></md-datepicker>
-            </div>
 
-            <md-input-container class="md-block">
-                <label>Type Opdracht</label>
-                <md-select ng-model="user.state">
-                    <md-option ng-repeat="state in states" value="{{state.abbrev}}">
-                        {{state.abbrev}}
-                    </md-option>
-                </md-select>
-            </md-input-container>
+                </br>
 
-            </br>
+                <md-input-container class="md-block">
+                    <label>Beschrijving</label>
+                    <textarea ng-model="user.biography" columns="1" md-maxlength="150" rows="5"></textarea>
+                </md-input-container>
 
-            <md-input-container class="md-block">
-                <label>Beschrijving</label>
-                <textarea ng-model="user.biography" columns="1" md-maxlength="150" rows="5"></textarea>
-            </md-input-container>
+                <md-button class="md-raised">Opslaan</md-button>
+            </form>
 
-        </form>
+
+        </md-whiteframe>
+
+
 
     </md-content>
 </div>
+
