@@ -1,5 +1,5 @@
 'use strict';
-var login = angular.module('login',['ngMaterial']);
+var login = angular.module('login',['ngMaterial', 'ngRoute']);
 
 function controller($scope)
 {
