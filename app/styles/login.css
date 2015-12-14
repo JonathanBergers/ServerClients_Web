@@ -3,7 +3,7 @@ body
     background-color: lightgray;
 }
 
-#inlogForm
+#loginForm
 {
     background-color: white;
     border-radius: 1px;
@@ -17,7 +17,7 @@ body
 
 }
 
-.invoerButton
+.submitButton
 {
     background-color: #FFC107;
 }

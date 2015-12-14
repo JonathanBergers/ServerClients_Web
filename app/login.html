@@ -11,13 +11,13 @@
     <script src="./bower_components/angular-aria/angular-aria.js"></script>
     <script type="text/javascript" src="./bower_components/angular-material/angular-material.js"></script>
 
-
+    <!-- CSS LIBARIES-->
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
     <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css"/>
+
+
+    <!-- SELF MADE CSS-->
     <link rel="stylesheet" href="styles/login.css">
-    <link rel="stylesheet" href="styles/styles.css">
-
-
 
 </head>
 
@@ -30,7 +30,7 @@
 </md-toolbar>
 
 
-<div ng-controller="controller" layout="column" id="inlogForm" class="md-inline-form " >
+<div ng-controller="controller" layout="column" id="loginForm" class="md-inline-form " >
     <md-content md-theme="docs-dark" layout-padding layout-gt-sm="row" >
         <form name="userForm">
             <md-input-container class="md-block">
@@ -40,7 +40,7 @@
 
             <md-input-container  class="md-block">
                 <label>Wachtwoord</label>
-                <input ng-model="wachtwoord" type="password">
+                <input ng-model="password" type="password">
             </md-input-container>
             <md-button ng-click="controle()" class="md-raised" >inloggen</md-button>
         </form>
@@ -54,7 +54,6 @@
 <script src="bower_components/angular-route/angular-route.js"></script>
 <script src="scripts/app.js"></script>
 <script src="views/createGameView/createGame.js"></script>
-<script src="view2/view2.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
