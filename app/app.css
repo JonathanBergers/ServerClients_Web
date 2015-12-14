@@ -32,3 +32,12 @@
 .inputdemoBasicUsage .md-datepicker-button {
   width: 36px; }
 
+.form-left {
+  display: inline-block;
+}
+
+
+.map-right {
+  display: inline-block;
+
+}
