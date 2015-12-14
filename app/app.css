@@ -88,3 +88,8 @@ md-card-content{
   display:block;
   margin:auto;
 }
+
+.quest_map {
+  width: 500px;
+  height: 500px;
+}
