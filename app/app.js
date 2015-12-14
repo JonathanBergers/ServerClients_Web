@@ -8,6 +8,7 @@ var appModule =  angular.module('myApp', [
   'myApp.view1',
   'myApp.view2',
   'myApp.view3',
+  'myApp.gamesOverview',
   'myApp.version'
 
 ]).
@@ -25,7 +26,7 @@ appModule.controller('NavController', ['$scope', function($scope, $mdSidenav) {
 
 
   //ADD TABS FOR VIEWS
-  $scope.tabs = [ {title: "Games", url: "#/games"}, {title: "Users", url: "#/users"}];
+  $scope.tabs = [ {title: "Games", url: "#/gamesOverview"}, {title: "Users", url: "#/users"}];
 }]);
 
 //

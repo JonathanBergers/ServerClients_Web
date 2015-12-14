@@ -1,0 +1,25 @@
+
+<div class="game-grid" ng-controller="gameController">
+
+    <div class='md-padding' layout="row" layout-wrap>
+
+        <md-card style="width: 300px;" ng-repeat="game in games">
+            <img src="http://icons.iconarchive.com/icons/mkho/christmas/256/Star-icon.png" class="md-card-image" alt="user avatar">
+            <md-card-content>
+                <h1>{{game.name}}</h1>
+                <p>Aantal quests: {{game.quests}}</p>
+            </md-card-content>
+            <hr>
+            <div class="md-actions" layout="row" layout-align="start center">
+                <md-button class="custom-button">Open</md-button>
+            </div>
+
+        </md-card>
+
+    </div>
+
+</div>
+
+<md-button ng-click="" id="flyingButton" class="md-fab md-primary md-hue-2" aria-label="Profile" href="#/view1">
+    <md-icon md-svg-src="img/icons/ic_people_24px.svg"></md-icon>
+</md-button>
