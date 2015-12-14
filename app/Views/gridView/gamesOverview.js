@@ -6,7 +6,7 @@ angular.module('myApp.gamesOverview', ['ngRoute', 'ngMaterial'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/gamesOverview', {
-            templateUrl: 'gridView/gamesOverview.html',
+            templateUrl: 'views/gridView/gamesOverview.html',
             controller: 'gameController'
         });
     }])

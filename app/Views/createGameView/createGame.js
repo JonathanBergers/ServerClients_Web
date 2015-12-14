@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
+angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
 
     .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/view1', {
-        templateUrl: 'view1/view1.html',
+      $routeProvider.when('/createGameView', {
+        templateUrl: 'views/createGameView/createGame.html',
         controller: 'QuestMapController'
       });
     }])
@@ -110,10 +110,10 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
 
 //'use strict';
 //
-//angular.module('myApp.view1', ['ngRoute',' $scope'])
+//angular.module('myApp.createGameView', ['ngRoute',' $scope'])
 //    .config(['$routeProvider',function($routeProvider) {
-//      $routeProvider.when('/view1', {
-//        templateUrl: 'view1/view1.html',
+//      $routeProvider.when('/createGameView', {
+//        templateUrl: 'createGameView/createGameView.html',
 //        controller: 'QuestMapController'
 //      });
 //    }])
@@ -121,8 +121,8 @@ angular.module('myApp.view1', ['ngRoute', 'ngMaterial'])
 //
 ////
 ////var ModuleConfig = function($routeProvider){
-////  $routeProvider.when('/view1', {
-////    templateUrl: 'view1/view1.html',
+////  $routeProvider.when('/createGameView', {
+////    templateUrl: 'createGameView/createGameView.html',
 ////    controller: 'QuestMapController'
 ////  });
 ////

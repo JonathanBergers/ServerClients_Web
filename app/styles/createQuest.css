@@ -1,0 +1,13 @@
+.quest_map {
+    width: 720px;
+    height: 630px;
+    float: left;
+}
+
+.md-datepicker {
+    padding-right: 0px;
+}
+
+.quest_form {
+    float: right;
+}

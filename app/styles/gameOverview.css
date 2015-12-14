@@ -1,0 +1,47 @@
+
+#flyingButton {
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+}
+
+hr{
+    color: #FFFFFF;
+    background: #FFFFFF;
+    width: 280px;
+    height: 1px;
+}
+
+.game-grid{
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.game-grid p{
+    color: #BBDEFB;
+    text-align: center;
+}
+
+.game-grid md-card{
+    background: #2196F3;
+    box-shadow: 1px 1px 1px 1px #B6B6B6;
+}
+
+/*
+md-card-content{
+  display:block;
+  margin:auto;
+}
+*/
+
+.custom-button{
+    background: #FFC107;
+    width: 100%;
+}
+
+.md-card-image{
+    width:150px;
+    height:150px;
+    display:block;
+    margin:auto;
+}

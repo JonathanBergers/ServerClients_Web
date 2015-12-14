@@ -7,7 +7,7 @@ function controller($scope)
     $scope.controle = function() {
         if($scope.name == "admin" && $scope.wachtwoord == "admin")
         {
-            document.location.href = "index.html"
+            document.location.href = "../index.html"
         }
         else {
             window.alert("inlog gevens zijn onjuist");
