@@ -5,14 +5,14 @@ function controller($scope)
 {
 
     $scope.controle = function() {
-        if($scope.name == "admin" && $scope.wachtwoord == "admin")
+        if($scope.name == "admin" && $scope.password == "admin")
         {
-            document.location.href = "../index.html"
+            document.location.href = "#/index.html"
         }
         else {
             window.alert("inlog gevens zijn onjuist");
             $scope.name = "";
-            $scope.wachtwoord ="";
+            $scope.password ="";
         }
     }
 }
