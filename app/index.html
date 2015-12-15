@@ -32,9 +32,9 @@
 
 
   <!-- SELF CREATED CSS-->
-  <link rel="stylesheet" href="styles/app.css">
-  <link rel="stylesheet" href="styles/createQuest.css">
-  <link rel="stylesheet" href="styles/gameOverview.css">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="gameEditor/gameEditor.css">
+  <link rel="stylesheet" href="gameOverview/gameOverview.css">
 
 
 
@@ -52,11 +52,15 @@
   <md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-whiteframe-z2" md-component-id="left">
     <md-list>
       <md-list-item ng-repeat="tab in tabs">
-        <a href={{tab.url}}>
-          <md-button>
-            <p>{{tab.title}}</p>
-          </md-button>
-        </a>
+
+
+          <div class = "sidenav-button">
+            <a href={{tab.url}}>
+              <p class = "sidenav-title">{{tab.title}}</p>
+            </a>
+          </div>
+
+
       </md-list-item>
     </md-list>
   </md-sidenav>
@@ -79,9 +83,9 @@
   <script src="bower_components/angular-route/angular-route.js"></script>
 
 <!-- Hier alle custom views JavaScript implementeren! -->
-  <script src="scripts/app.js"></script>
-  <script src="views/createGameView/createGame.js"></script>
-  <script src="views/gridView/gamesOverview.js"></script>
+  <script src="app.js"></script>
+  <script src="gameEditor/gameEditor.js"></script>
+  <script src="gameOverview/gameOverview.js"></script>
 <!-- Hier alle custom views JavaScript implementeren! -->
 
   <script src="components/version/version.js"></script>

@@ -5,20 +5,20 @@
 describe('my app', function() {
 
 
-  it('should automatically redirect to /createGameView when location hash/fragment is empty', function() {
+  it('should automatically redirect to /gameEditor when location hash/fragment is empty', function() {
     browser.get('index.html');
-    expect(browser.getLocationAbsUrl()).toMatch("/createGameView");
+    expect(browser.getLocationAbsUrl()).toMatch("/gameEditor");
   });
 
 
   describe('view1', function() {
 
     beforeEach(function() {
-      browser.get('index.html#/createGameView');
+      browser.get('index.html#/gameEditor');
     });
 
 
-    it('should render createGameView when user navigates to /createGameView', function() {
+    it('should render gameEditor when user navigates to /gameEditor', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
         toMatch(/partial for view 1/);
     });

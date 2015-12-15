@@ -1,10 +1,10 @@
 'use strict';
 
-describe('myApp.createGameView module', function() {
+describe('myApp.gameEditor module', function() {
 
   beforeEach(module('myApp.view1'));
 
-  describe('createGameView controller', function(){
+  describe('gameEditor controller', function(){
 
     it('should ....', inject(function($controller) {
       //spec body

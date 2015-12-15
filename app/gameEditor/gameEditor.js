@@ -3,8 +3,8 @@
 angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
 
     .config(['$routeProvider', function($routeProvider) {
-      $routeProvider.when('/createGameView', {
-        templateUrl: 'views/createGameView/createGame.html',
+      $routeProvider.when('/gameEditor', {
+        templateUrl: 'gameEditor/gameEditor.html',
         controller: 'QuestMapController'
       });
     }])
@@ -84,23 +84,16 @@ angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
 
     /* FORM */
     .controller('inputController', [ '$scope', function ($scope) {
+      var self = this;
+      self.user = function(){};
 
-      $scope.user = function(){};
-
-      $scope.user = {
+      self.user = {
         title: 'Epy Drost',
-        email: 'ipsum@lorem.com',
-        firstName: '',
-        lastName: '',
-        company: 'Google',
-        address: '1600 Amphitheatre Pkwy',
-        city: 'Mountain View',
-        state: 'Battle zone',
-        biography: 'Ga naar het Epy Drost gebouw\nen ga een gevecht aan met een andere speler!',
-        postalCode: '94043'
+        quest: 'Battle zone',
+        description: 'Ga naar het Epy Drost gebouw\nen ga een gevecht aan met een andere speler!'
       };
 
-      $scope.states = ["Battle zone", "Discover objective"];
+      self.quests = ["Battle zone", "Discover objective"];
 
     }]);
 
@@ -110,10 +103,10 @@ angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
 
 //'use strict';
 //
-//angular.module('myApp.createGameView', ['ngRoute',' $scope'])
+//angular.module('myApp.gameEditor', ['ngRoute',' $scope'])
 //    .config(['$routeProvider',function($routeProvider) {
-//      $routeProvider.when('/createGameView', {
-//        templateUrl: 'createGameView/createGameView.html',
+//      $routeProvider.when('/gameEditor', {
+//        templateUrl: 'gameEditor/gameEditor.html',
 //        controller: 'QuestMapController'
 //      });
 //    }])
@@ -121,8 +114,8 @@ angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
 //
 ////
 ////var ModuleConfig = function($routeProvider){
-////  $routeProvider.when('/createGameView', {
-////    templateUrl: 'createGameView/createGameView.html',
+////  $routeProvider.when('/gameEditor', {
+////    templateUrl: 'gameEditor/gameEditor.html',
 ////    controller: 'QuestMapController'
 ////  });
 ////
