@@ -1,10 +1,10 @@
 'use strict';
 
-angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
+angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
     .config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/gameEditor', {
-        templateUrl: 'gameEditor/gameEditor.html',
+        templateUrl: 'views/gameEditor/gameEditor.html',
         controller: 'QuestMapController'
       });
     }])
@@ -83,57 +83,16 @@ angular.module('myApp.createGameView', ['ngRoute', 'ngMaterial'])
     }])
 
     /* FORM */
-    .controller('inputController', [ '$scope', function ($scope) {
+    .controller('inputController', [function () {
       var self = this;
-      self.user = function(){};
+      self.game = function(){};
 
-      self.user = {
+      self.game = {
         title: 'Epy Drost',
         quest: 'Battle zone',
         description: 'Ga naar het Epy Drost gebouw\nen ga een gevecht aan met een andere speler!'
       };
 
       self.quests = ["Battle zone", "Discover objective"];
-
+      return true;
     }]);
-
-
-
-
-
-//'use strict';
-//
-//angular.module('myApp.gameEditor', ['ngRoute',' $scope'])
-//    .config(['$routeProvider',function($routeProvider) {
-//      $routeProvider.when('/gameEditor', {
-//        templateUrl: 'gameEditor/gameEditor.html',
-//        controller: 'QuestMapController'
-//      });
-//    }])
-
-//
-////
-////var ModuleConfig = function($routeProvider){
-////  $routeProvider.when('/gameEditor', {
-////    templateUrl: 'gameEditor/gameEditor.html',
-////    controller: 'QuestMapController'
-////  });
-////
-////
-////};
-////
-////
-////
-////var QuestFormController = function($scope){
-////
-////  $scope.user = {
-////    title: "Titel",
-////    description: "beschrijving",
-////    type: "type"
-////  };
-////
-////  $scope.type =["Battle zone", "Discover zone"];
-////
-////
-////
-////};

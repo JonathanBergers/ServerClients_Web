@@ -6,15 +6,15 @@ angular.module('myApp.gamesOverview', ['ngRoute', 'ngMaterial'])
 
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/gameOverview', {
-            templateUrl: 'gameOverview/gameOverview.html',
+            templateUrl: 'views/gameOverview/gameOverview.html',
             controller: 'gameController'
         });
     }])
 
-    .controller('gameController', ['$scope', function($scope) {
-        $scope.games = [];
+    .controller('gameController', [function() {
+        var self = this;
 
-        $scope.games = [
+        self.games = [
             { quests: '3',name: 'Informatica'},
             { quests: '6',name: 'Economie'},
             { quests: '22',name: 'Rechten'},

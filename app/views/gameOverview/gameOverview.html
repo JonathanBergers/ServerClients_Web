@@ -1,8 +1,8 @@
-<div class="game-grid" ng-controller="gameController">
+<div class="game-grid" ng-controller="gameController as controller">
 
     <div class='md-padding' layout="row" layout-wrap>
 
-        <md-card style="width: 300px;" ng-repeat="game in games">
+        <md-card style="width: 300px;" ng-repeat="game in controller.games">
             <img src="http://icons.iconarchive.com/icons/mkho/christmas/256/Star-icon.png" class="md-card-image" alt="user avatar">
             <md-card-content>
                 <h1>{{game.name}}</h1>

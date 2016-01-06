@@ -28,19 +28,19 @@
     </md-toolbar>
 
 
-    <div ng-controller="controller" layout="column" id="loginForm" class="md-inline-form " >
+    <div ng-controller="loginController as controller" layout="column" id="loginForm" class="md-inline-form " >
         <md-content md-theme="docs-dark" layout-padding layout-gt-sm="row" >
             <form name="userForm">
                 <md-input-container class="md-block">
                     <label>Gebruikersnaam</label>
-                    <input ng-model="name">
+                    <input ng-model="controller.name">
                 </md-input-container>
 
                 <md-input-container  class="md-block">
                     <label>Wachtwoord</label>
-                    <input ng-model="password" type="password">
+                    <input ng-model="controller.password" type="password">
                 </md-input-container>
-                <md-button ng-click="controle()" class="md-raised" >inloggen</md-button>
+                <md-button ng-click="controller.control()" class="md-raised" >inloggen</md-button>
             </form>
         </md-content>
 

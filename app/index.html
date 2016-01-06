@@ -33,8 +33,8 @@
 
   <!-- SELF CREATED CSS-->
   <link rel="stylesheet" href="app.css">
-  <link rel="stylesheet" href="gameEditor/gameEditor.css">
-  <link rel="stylesheet" href="gameOverview/gameOverview.css">
+  <link rel="stylesheet" href="views/gameEditor/gameEditor.css">
+  <link rel="stylesheet" href="views/gameOverview/gameOverview.css">
 
 
 
@@ -43,13 +43,13 @@
 
 <md-toolbar layout="row">
   <md-button class="menu" ng-click="nc.toggleNav()" aria-label="Show User List">
-    <md-icon md-svg-icon="menu"></md-icon>
   </md-button>
   <h1>Zaxion</h1>
 </md-toolbar>
 
 <div flex layout="row">
   <md-sidenav md-is-locked-open="$mdMedia('gt-md')" class="md-whiteframe-z2" md-component-id="left">
+
     <md-list>
       <md-list-item ng-repeat="tab in tabs">
 
@@ -84,8 +84,8 @@
 
 <!-- Hier alle custom views JavaScript implementeren! -->
   <script src="app.js"></script>
-  <script src="gameEditor/gameEditor.js"></script>
-  <script src="gameOverview/gameOverview.js"></script>
+  <script src="views/gameEditor/gameEditor.js"></script>
+  <script src="views/gameOverview/gameOverview.js"></script>
 <!-- Hier alle custom views JavaScript implementeren! -->
 
   <script src="components/version/version.js"></script>

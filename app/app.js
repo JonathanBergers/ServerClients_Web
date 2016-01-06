@@ -3,9 +3,9 @@
 // Declare app level module which depends on views, and components
 
 var appModule =  angular.module('myApp', [
-    'ngMaterial',
+  'ngMaterial',
   'ngRoute',
-  'myApp.createGameView',
+  'myApp.gameEditor',
   'myApp.gamesOverview',
   'myApp.version'
 
@@ -18,7 +18,9 @@ config(['$routeProvider', function($routeProvider) {
 
 
 appModule.controller('NavController', ['$scope', function($scope, $mdSidenav) {
-  $scope.toggleNav = function(){
+  var self = this;
+
+  self.toggleNav = function(){
     $mdSidenav('left').toggle();
   };
 
