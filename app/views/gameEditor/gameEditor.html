@@ -43,3 +43,15 @@
     </md-content>
 </div>
 
+<div ng-controller ="inputController as controller" layout>
+    <div flex="10" layout layout-align="center center">
+        <span class="md-body-1">Straf Timer</span>
+    </div>
+    <md-slider flex min="0" max="180" ng-model="controller.game.timer" aria-label="red" id="red-slider" class>
+    </md-slider>
+    <div flex="20" layout layout-align="center center">
+        <input flex type="number" ng-model="controller.game.timer" aria-label="red" aria-controls="red-slider">
+    </div>
+</div>
+
+
