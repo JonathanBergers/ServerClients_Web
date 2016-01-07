@@ -12,7 +12,7 @@ var appModule =  angular.module('myApp', [
 ]).
 config(['$routeProvider', function($routeProvider) {
   $routeProvider.
-      otherwise({redirectTo: '/gamesOverview'});
+      otherwise({redirectTo: '/gameEditor'});
 }]);
 
 

@@ -16,19 +16,18 @@ describe('Module: myapp.login', function() {
             ctrl = $controller('loginController');
         }));
 
-
         it('should let me pass login', function() {
             ctrl.name = "admin";
             ctrl.password = "admin";
 
-            expect(ctrl.control).toBe(true);
+            expect(ctrl.control).toBeTruthy();
         });
 
         it('should not let me pass login', function() {
             ctrl.name = "bla";
             ctrl.password = "admin";
 
-            expect(ctrl.control).toBe(false);
+            expect(ctrl.control).toBeFalsy();
         });
 
     });

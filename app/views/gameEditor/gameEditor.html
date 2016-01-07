@@ -1,10 +1,14 @@
 <div class= "quest_map" id="map" ></div>
 
-<div ng-controller ="inputController as controller" layout="column" ng-cloak class="md-inline-form form-left quest_form">
+<md-content id = "QuestEditorTitle">
+    Quest Editor
+</md-content>
+
+<div ng-controller ="inputController as controller" layout="column" ng-cloak class="md-inline-form form-left quest-form">
 
     <md-content layout-padding >
 
-        <md-whiteframe class="md-whiteframe-6dp"  layout layout-align="right top">
+        <md-whiteframe layout layout-align="right top">
 
             <form name="userForm">
 
@@ -13,45 +17,34 @@
                         <label>Titel</label>
                         <input ng-model="controller.game.title">
                     </md-input-container>
-                    <md-datepicker ng-model="" md-placeholder="Enter date"></md-datepicker>
+                    <md-datepicker ng-model="controller.game.date" md-placeholder="Enter date"></md-datepicker>
                 </div>
 
-                <md-input-container class="md-block">
-                    <label>Type Opdracht</label>
-                    <md-select ng-model="">
-                        <md-option ng-repeat="quest in controller.quests">
-                            {{quest}}
-                        </md-option>
-                    </md-select>
-                </md-input-container>
-
                 </br>
+
+
+                <label class= "custom-input-label">Straf Timer in minuten</label>
+                <md-slider flex md-discrete ng-model="controller.game.timer" step="1" min="1" max="5" aria-label="rating">
+                </md-slider>
 
                 <md-input-container class="md-block">
                     <label>Beschrijving</label>
                     <textarea ng-model="controller.game.description" columns="1" md-maxlength="150" rows="5"></textarea>
                 </md-input-container>
 
-                <md-button class="md-raised">Opslaan</md-button>
             </form>
 
 
         </md-whiteframe>
 
 
+        <md-button md-no-ink class="md-primary invisable" id ="quest-save-button">Opslaan</md-button>
 
     </md-content>
 </div>
 
 <div ng-controller ="inputController as controller" layout>
-    <div flex="10" layout layout-align="center center">
-        <span class="md-body-1">Straf Timer</span>
-    </div>
-    <md-slider flex min="0" max="180" ng-model="controller.game.timer" aria-label="red" id="red-slider" class>
-    </md-slider>
-    <div flex="20" layout layout-align="center center">
-        <input flex type="number" ng-model="controller.game.timer" aria-label="red" aria-controls="red-slider">
-    </div>
+
 </div>
 
 

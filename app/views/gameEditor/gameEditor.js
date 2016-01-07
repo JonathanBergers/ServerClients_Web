@@ -21,7 +21,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     .controller('QuestMapController', [ '$scope' , function($scope) {
       L.mapbox.accessToken = 'pk.eyJ1Ijoiam9uYXRoYW5iZXJnZXJzIiwiYSI6ImNpaHcyczFyaDAyZXR1aGtvY256b2JoZm0ifQ.oI5PGaOb1mVPUpKpOWRI0g';
       var map = L.mapbox.map('map', 'mapbox.streets')
-          .setView([38.89399, -77.03659], 17);
+          .setView([52.221, 6.894], 17);
 
       $scope.newQuest = true;
 
@@ -94,5 +94,13 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       };
 
       self.quests = ["Battle zone", "Discover objective"];
+
+
+      var showButton = function() {
+        if (self.title && self.description && self.date && self.timer) {
+          $("#quest-save-button").removeClass("invisable");
+        }
+      }
+
       return true;
     }]);
