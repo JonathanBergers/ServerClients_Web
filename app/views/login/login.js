@@ -9,7 +9,7 @@ login.controller('loginController', function () {
     self.control = function () {
 
         if(self.name == "admin" && self.password == "admin") {
-            document.location.href = "../../../"
+            document.location.href = "../../index.html"
             return true;
         } else {
             window.alert("inlog gevens zijn onjuist");

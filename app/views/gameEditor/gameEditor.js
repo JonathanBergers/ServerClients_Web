@@ -98,7 +98,8 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
       var showButton = function() {
         if (self.title && self.description && self.date && self.timer) {
-          $("#quest-save-button").removeClass("invisable");
+          alert("boe");
+          angular.element("#quest-save-button").removeClass("invisible");
         }
       }
 

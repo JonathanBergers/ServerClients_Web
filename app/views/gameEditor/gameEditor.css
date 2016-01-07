@@ -20,11 +20,11 @@
 
 #quest-save-button,
 .visible{
-    width: 50%;
+    width: 100%;
 }
 
 .invisable {
-    display: none;
+/*    display: none;*/
 }
 
 .custom-input-label {

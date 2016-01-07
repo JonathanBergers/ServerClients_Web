@@ -1,14 +1,14 @@
-<div class= "quest_map" id="map" ></div>
+<div layout = "row" flex="60" class= "quest_map" id="map" ></div>
 
 <md-content id = "QuestEditorTitle">
     Quest Editor
 </md-content>
 
-<div ng-controller ="inputController as controller" layout="column" ng-cloak class="md-inline-form form-left quest-form">
+<div ng-controller ="inputController as controller" layout="row" ng-cloak class="md-inline-form form-left quest-form">
 
-    <md-content layout-padding >
+    <md-content layout-padding flex>
 
-        <md-whiteframe layout layout-align="right top">
+        <md-whiteframe layout-align="right top">
 
             <form name="userForm">
 
@@ -27,7 +27,7 @@
                 <md-slider flex md-discrete ng-model="controller.game.timer" step="1" min="1" max="5" aria-label="rating">
                 </md-slider>
 
-                <md-input-container class="md-block">
+                <md-input-container class="md-block" ng-mousemove="controller.showButton()">
                     <label>Beschrijving</label>
                     <textarea ng-model="controller.game.description" columns="1" md-maxlength="150" rows="5"></textarea>
                 </md-input-container>
@@ -37,13 +37,12 @@
 
         </md-whiteframe>
 
-
-        <md-button md-no-ink class="md-primary invisable" id ="quest-save-button">Opslaan</md-button>
+        <div flex layout="column" layout-align="center end"  id ="quest-save-button" class = "invisible" >
+            <md-button md-no-ink class="md-primary">Opslaan</md-button>
+        </div>
 
     </md-content>
 </div>
-
-<div ng-controller ="inputController as controller" layout>
 
 </div>
 
