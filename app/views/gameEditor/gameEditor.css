@@ -1,1 +1,13 @@
+.table-25 {
+    border: 1px solid #FFAB40;
+    font-size: large;
+    font-weight: 500;
+}
 
+.table_title {
+    color: #2196F3;
+}
+
+.table-content {
+    margin-top: 10%;
+}

@@ -10,10 +10,16 @@ var appModule =  angular.module('myApp', [
   'myApp.version'
 
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.
-      otherwise({redirectTo: '/gameEditor'});
-}]);
+    config(['$routeProvider', function($routeProvider) {
+      $routeProvider.
+          otherwise({redirectTo: '/gameEditor'});
+
+    }])
+    .config(function($mdThemingProvider) {
+      $mdThemingProvider.theme('default')
+          .primaryPalette('blue')
+          .accentPalette('orange');
+    });
 
 
 

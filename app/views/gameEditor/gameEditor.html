@@ -32,13 +32,27 @@
 
     </md-content>
 
-    <md-content>
-        <md-list-item class="md-2-line">
-            <div class="md-list-item-text">
-                <h3>{{ todos[0].who }}</h3>
-                <p>Secondary text</p>
+    <md-content layout-padding layout="column" class = "table-content">
+        <h3 class = "table_title" >Game tabel</h3>
+
+
+        <div layout="column" layout-fill>
+
+            <div layout="row" layout-fill>
+                <h5 flex="25">Titel</h5>
+                <h5 flex="25">Mapbox id</h5>
+                <h5 flex="25">Timer</h5>
+                <h5 flex="25">?</h5>
             </div>
-        </md-list-item>
+
+            <div layout="row" layout-fill> <!--ng-repeat=""-->
+                <div flex="25" layout-padding class = "table-25">bla</div>
+                <div flex="25" layout-padding class = "table-25">bla</div>
+                <div flex="25" layout-padding class = "table-25">bla</div>
+                <div flex="25" layout-padding class = "table-25">bla</div>
+            </div>
+
+        </div>
 
     </md-content>
 
