@@ -17,17 +17,7 @@ login.controller('loginController', function ($http) {
         error(function(data, status, headers, config) {
             window.alert("inlog gevens zijn onjuist");
         });
-
-
-        if(self.name == "admin" && self.password == "admin") {
-            document.location.href = "../../index.html"
-            return true;
-        } else {
-            window.alert("inlog gevens zijn onjuist");
-            self.name = "";
-            self.password ="";
-            return false;
-        }
+        
     }
 
 });
