@@ -1,48 +1,31 @@
-<div layout = "row" flex="60" class= "quest_map" id="map" ></div>
+<div ng-controller ="inputController as controller" layout="row" ng-cloak class="md-inline-form">
 
-<md-content id = "QuestEditorTitle">
-    Quest Editor
-</md-content>
+    <md-content layout-padding>
 
-<div ng-controller ="inputController as controller" layout="row" ng-cloak class="md-inline-form form-left quest-form">
-
-    <md-content layout-padding flex>
-
-        <md-whiteframe layout-align="right top">
+        <md-whiteframe class= "md-whiteframe-8dp" layout ="column" layout-align="center center">
 
             <form name="userForm">
 
-                <div layout-gt-sm="row">
-                    <md-input-container>
-                        <label>Titel</label>
-                        <input ng-model="controller.game.title">
-                    </md-input-container>
-                    <md-datepicker ng-model="controller.game.date" md-placeholder="Enter date"></md-datepicker>
-                </div>
-
-                </br>
-
-
-                <label class= "custom-input-label">Straf Timer in minuten</label>
-                <md-slider flex md-discrete ng-model="controller.game.timer" step="1" min="1" max="5" aria-label="rating">
-                </md-slider>
-
-                <md-input-container class="md-block" ng-mousemove="controller.showButton()">
+                <md-input-container class="md-block " ng-mousemove="controller.showButton()">
                     <label>Beschrijving</label>
-                    <textarea ng-model="controller.game.description" columns="1" md-maxlength="150" rows="5"></textarea>
+                    <textarea layout-margin ng-model="controller.game.description" columns="1" md-maxlength="150" rows="5"></textarea>
                 </md-input-container>
 
+                <label class= "custom-input-label">Straf Timer in minuten</label>
+                <md-slider layout-margin md-discrete ng-model="controller.game.timer" step="1" min="1" max="5" aria-label="rating">
+                </md-slider>
+
+
+                <div flex="100" id ="quest-save-button" >
+                    <md-button ng-click="controller.sendGameData()" md-no-ink class="md-primary">Stuur</md-button>
+                </div>
             </form>
 
 
         </md-whiteframe>
 
-        <div flex layout="column" layout-align="center end"  id ="quest-save-button" class = "invisible" >
-            <md-button md-no-ink class="md-primary">Opslaan</md-button>
-        </div>
 
     </md-content>
-</div>
 
 </div>
 
