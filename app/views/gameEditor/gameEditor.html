@@ -1,29 +1,44 @@
-<div ng-controller ="inputController as controller" layout="row" ng-cloak class="md-inline-form">
+<div ng-controller ="inputController as controller" ng-cloak class="md-inline-form">
 
-    <md-content layout-padding>
+    <md-subheader class="md-primary">Zaxion admin dashboard</md-subheader>
 
-        <md-whiteframe class= "md-whiteframe-8dp" layout ="column" layout-align="center center">
+
+    <md-content layout-padding layout="column" layout-align="center center">
+
+        <h4>Confirm map</h4>
+        <md-whiteframe class= "md-whiteframe-3dp" layout ="column">
 
             <form name="userForm">
-
-                <md-input-container class="md-block " ng-mousemove="controller.showButton()">
-                    <label>Beschrijving</label>
-                    <textarea layout-margin ng-model="controller.game.description" columns="1" md-maxlength="150" rows="5"></textarea>
+                <md-input-container class="md-block">
+                    <label>Titel</label>
+                    <textarea layout-margin ng-model="controller.game.title" columns="1" md-maxlength="20" rows="5"></textarea>
                 </md-input-container>
 
-                <label class= "custom-input-label">Straf Timer in minuten</label>
+                <md-input-container class="md-block">
+                    <label>Mapbox id</label>
+                    <textarea layout-margin ng-model="controller.game.mapbox_id" columns="1" md-maxlength="150" rows="5"></textarea>
+                </md-input-container>
+
+                <label class= "custom-input-label">Straf tijd in minuten</label>
+
                 <md-slider layout-margin md-discrete ng-model="controller.game.timer" step="1" min="1" max="5" aria-label="rating">
                 </md-slider>
 
-
-                <div flex="100" id ="quest-save-button" >
-                    <md-button ng-click="controller.sendGameData()" md-no-ink class="md-primary">Stuur</md-button>
-                </div>
             </form>
 
+            <md-button flex ng-click="controller.sendGameData()" md-no-ink class="md-primary">Stuur</md-button>
 
         </md-whiteframe>
 
+    </md-content>
+
+    <md-content>
+        <md-list-item class="md-2-line">
+            <div class="md-list-item-text">
+                <h3>{{ todos[0].who }}</h3>
+                <p>Secondary text</p>
+            </div>
+        </md-list-item>
 
     </md-content>
 

@@ -41,13 +41,9 @@
 </head>
 <body ng-controller="NavController as nc" layout="column">
 
-<md-toolbar layout="row">
-  <md-button class="menu" ng-click="nc.toggleNav()" aria-label="Show User List">
-  </md-button>
-  <h1>Zaxion</h1>
-</md-toolbar>
-
-<div flex layout="row">
+  <md-toolbar>
+    <h1 layout-margin>Zaxion</h1>
+  </md-toolbar>
 
   <md-content flex id="content">
 
@@ -55,7 +51,6 @@
     <div ng-view></div>
 
   </md-content>
-</div>
 
 
 

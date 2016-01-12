@@ -15,7 +15,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       self.game = function(){};
 
       self.game = {
-        mapbox_id: 'mapbox_id'
+        mapbox_id: ''
       };
 
       self.sendGameData = function() {
