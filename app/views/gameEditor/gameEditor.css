@@ -1,13 +1,21 @@
-.table-25 {
-    border: 1px solid #FFAB40;
-    font-size: large;
-    font-weight: 500;
+.table-item-header {
+    font-weight: 600;
+    border-bottom: 1px solid #ECECEC;
 }
 
-.table_title {
-    color: #2196F3;
+.table-item {
+    transition: background-color 0.5s;
 }
 
-.table-content {
-    margin-top: 10%;
+.table-item:hover {
+    background-color: #ECECEC;
+}
+
+.full-table {
+    padding-top: 5%;
+    border-top: 1px solid #2196F3;
+}
+
+.game-confirm {
+    padding-bottom: 5%;
 }
