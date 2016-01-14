@@ -19,7 +19,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       };
 
       self.sendGameData = function() {
-
+          var jsonString = JSON.stringify(self.game);
       }
 
       return true;
@@ -33,6 +33,10 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       self.games;
 
       self.getGames = function() {
+
+      }
+
+      self.getJSON = function() {
 
       }
 

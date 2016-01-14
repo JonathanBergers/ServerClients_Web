@@ -34,7 +34,7 @@
 
 
 <md-content ng-controller="tableController as controller" layout-margin class = "full-table">
-    <md-whitefram class = "md-whiteframe-3dp" layout="column">
+    <md-whitefram class="md-whiteframe-3dp" layout="column">
 
         <md-toolbar layout="column" flex>
             <h3 layout="column" layout-align="center center">Game tabel</h3>
@@ -49,9 +49,8 @@
                         <div flex="25" layout-padding>4de item</div>
                 </md-list-item>
 
-                <!--ng-repeat=""-->
-                <md-list-item  layout="row" layout-fill class = "table-item ">
-                    <div flex="25" layout-padding>Voorbeeld</div>
+                <md-list-item ng-repeat="game in controller.games" ng-click="controller.getJson()" layout="row" layout-fill class = "table-item ">
+                    <div flex="25" layout-padding>game.title</div>
                     <div flex="25" layout-padding>id?=F3ffgh644</div>
                     <div flex="25" layout-padding>3.0</div>
                     <div flex="25" layout-padding>no clue</div>
