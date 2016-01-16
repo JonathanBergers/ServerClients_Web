@@ -10,7 +10,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     }])
 
     /* FORM */
-    .controller('inputController', [function () {
+    .controller('inputController', ['$http', function ($http) {
       var self = this;
       //self.game = function(){};
 
@@ -42,7 +42,22 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     };
 
       self.sendGameData = function() {
-          var jsonString = JSON.stringify(self.game);
+
+          var gamesEndpoint = "http://localhost:8888/games"
+
+          //TODO token header, LINK
+
+          $http.post(gamesEndpoint, JSON.stringify(self.game)).
+          success(function(data, status, headers, config) {
+              window.alert(" SUCCESS "  +data + status)
+              self.games = data
+          }).
+          error(function(data, status, headers, config) {
+              window.alert("error posting game " + data + " " + status)
+              // log error
+          });
+
+
       };
 
       return true;
@@ -57,6 +72,8 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
             {title: "test", id: "testId", punishTime: 10}
         ];
 
+        // TODO TOKEN HEADER, CORRECT LINK
+
         var gamesEndpoint = "http://localhost:8888/games"
         $http.get(gamesEndpoint).
         success(function(data, status, headers, config) {
@@ -64,7 +81,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
             self.games = data
         }).
         error(function(data, status, headers, config) {
-            windows.alert(data + " " + status)
+            window.alert("error retrieving games" + data + " " + status)
             // log error
         });
 
