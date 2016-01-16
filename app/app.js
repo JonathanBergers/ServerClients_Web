@@ -25,7 +25,11 @@ var appModule =  angular.module('myApp', [
 
 appModule.controller('NavController', ['$scope', function($scope, $mdSidenav) {
   var self = this;
-
+  self.token = sessionStorage.getItem('token');
+  if(self.token == null)
+  {
+    document.location.href = "views/login/login.html";
+  }
   self.toggleNav = function(){
     $mdSidenav('left').toggle();
   };
