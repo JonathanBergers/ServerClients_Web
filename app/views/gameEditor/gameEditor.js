@@ -37,8 +37,6 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
             }
             return !(punishTime == null || punishTime <= 0);
 
-
-
     };
 
       self.sendGameData = function() {
