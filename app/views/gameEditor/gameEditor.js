@@ -41,11 +41,15 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
       self.sendGameData = function() {
 
-          var gamesEndpoint = "http://localhost:8888/games"
+          var config = {
+              headers: {
+                  "token": sessionStorage.getItem('token')
+              }
+          }
+          var gamesEndpoint = "http://zaxion.nl/api/games"
+          var token = sessionStorage.getItem('token').
 
-          //TODO token header, LINK
-
-          $http.post(gamesEndpoint, JSON.stringify(self.game)).
+          $http.post(gamesEndpoint, JSON.stringify(self.game), config).
           success(function(data, status, headers, config) {
               window.alert(" SUCCESS "  +data + status)
               self.games = data
@@ -71,9 +75,13 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
         ];
 
         // TODO TOKEN HEADER, CORRECT LINK
-
-        var gamesEndpoint = "http://localhost:8888/games"
-        $http.get(gamesEndpoint).
+        var config = {
+            headers: {
+                "token": sessionStorage.getItem('token')
+            }
+        }
+        var gamesEndpoint = "http://zaxion.nl/api/games"
+        $http.get(gamesEndpoint, config).
         success(function(data, status, headers, config) {
             window.alert(data)
             self.games = data
