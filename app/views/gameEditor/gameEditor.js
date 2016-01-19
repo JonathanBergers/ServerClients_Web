@@ -17,7 +17,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       self.game = {
        title : null,
         id: null,
-          punishTime: null
+          punishTime: 1
       };
         /**checks if the user input is valid for sending
          *

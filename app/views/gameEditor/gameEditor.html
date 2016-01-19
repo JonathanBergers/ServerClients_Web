@@ -5,11 +5,6 @@ if(token == null)
     document.location.href = "../login/login.html";
 }</script>
 
-
-<md-button layout="row" layout-align="end end" class="md-fab newgame-button" ng-disabled="false" aria-label="Comment">
-    <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
-</md-button>
-
 <div>
 
     <md-content ng-controller ="inputController as controller" layout-margin layout="column" layout-align="center center" class = "game-confirm">
@@ -80,6 +75,10 @@ if(token == null)
 
     </md-content>
 
+    <md-button href="" class="md-fab newgame-button" ng-disabled="false" aria-label="Comment">
+        <i class="material-icons">+</i>
+    </md-button>
 </div>
+
 
 

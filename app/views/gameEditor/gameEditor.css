@@ -22,4 +22,6 @@
 
 .newgame-button {
     position: fixed;
+    bottom: 0;
+    right: 0;
 }
