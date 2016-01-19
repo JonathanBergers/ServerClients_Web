@@ -41,13 +41,17 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
       self.sendGameData = function() {
 
+          console.log(JSON.stringify(self.game))
+          window.alert("JO" + JSON.stringify(self.game))
           var config = {
               headers: {
+                  "Content-Type": "application/json",
                   "token": sessionStorage.getItem('token')
               }
-          }
+          };
           var gamesEndpoint = "http://zaxion.nl/api/games"
           var token = sessionStorage.getItem('token').
+
 
           $http.post(gamesEndpoint, JSON.stringify(self.game), config).
           success(function(data, status, headers, config) {
