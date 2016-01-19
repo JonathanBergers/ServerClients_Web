@@ -25,7 +25,7 @@
       it('should have this game on load', function() {
 
         expect(ctrl.game).toEqual({
-          title: 'Epy Drost',
+          description: 'Epy Drost',
           quest: 'Battle zone',
           description: 'Ga naar het Epy Drost gebouw\nen ga een gevecht aan met een andere speler!'
         });
