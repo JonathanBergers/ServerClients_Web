@@ -18,7 +18,7 @@ var appModule =  angular.module('myApp', [
     .config(function($mdThemingProvider) {
       $mdThemingProvider.theme('default')
           .primaryPalette('blue')
-          .accentPalette('orange');
+          .accentPalette('red');
     });
 
 
