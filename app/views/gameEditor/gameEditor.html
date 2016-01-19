@@ -57,10 +57,11 @@ if(token == null)
                         <div flex="33" layout-padding>Straf tijd</div>
                     </md-list-item>
 
-                    <md-list-item ng-repeat="game in controller.games" layout="row" ng-click="controller.editGame(game)" layout-fill class = "table-item ">
-                        <div flex="33" layout-padding>{{game.description}}</div>
-                        <div flex="33" layout-padding>{{game.locationId}}</div>
-                        <div flex="33" layout-padding>{{game.timeOut}}</div>
+                    <md-list-item ng-repeat="game in controller.games" layout="row" layout-fill class = "table-item ">
+
+                        <div ng-click="controller.editGame(game)" flex="33" layout-padding>{{game.description}}</div>
+                        <div ng-click="controller.editGame(game)" flex="33" layout-padding>{{game.locationId}}</div>
+                        <div ng-click="controller.editGame(game)" flex="33" layout-padding>{{game.timeOut}}</div>
 
                     </md-list-item>
 
@@ -75,7 +76,7 @@ if(token == null)
 
     </md-content>
 
-    <md-button href="" class="md-fab newgame-button" ng-disabled="false" aria-label="Comment">
+    <md-button href="http://www.mapbox.com/editor/" class="md-fab newgame-button" ng-disabled="false" aria-label="Comment">
         <i class="material-icons">+</i>
     </md-button>
 </div>

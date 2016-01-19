@@ -39,24 +39,19 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
     };
 
-      self.sendGameData = function() {
+        var config = {
+            headers: {
+                "token": sessionStorage.getItem('token'),
+                "Content-Type": "application/json"
+            }
+        };
+        var gamesEndpoint = "http://zaxion.nl/api/games";
 
-          console.log(JSON.stringify(self.game))
-          window.alert("JO" + JSON.stringify(self.game))
-          var config = {
-              headers: {
-                  "Content-Type": "application/json",
-                  "token": sessionStorage.getItem('token')
-              }
-          };
-          var gamesEndpoint = "http://zaxion.nl/api/games"
-          var token = sessionStorage.getItem('token').
-
-
+        self.sendGameData = function() {
           $http.post(gamesEndpoint, JSON.stringify(self.game), config).
           success(function(data, status, headers, config) {
-              window.alert(" SUCCESS "  +data + status)
-              self.games = data
+              $route.reload();
+
           }).
           error(function(data, status, headers, config) {
               window.alert("error posting game " + data + " " + status)
@@ -70,13 +65,14 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     }])
 
     /* TABLE */
-    .controller('tableController', ['$http', '$location' , function ($http, $location) {
+    .controller('tableController', ['$http' , function ($http) {
 
         var self = this;
 
 
 
         self.editGame = function(game){
+            window.location.href= "http://www.mapbox.com/editor/" + game.locationId
 
         }
         // TODO TOKEN HEADER, CORRECT LINK
@@ -88,7 +84,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
         var gamesEndpoint = "http://zaxion.nl/api/games"
         $http.get(gamesEndpoint, config).
         success(function(data, status, headers, config) {
-            window.alert(data)
+            //window.alert(data)
             self.games = data
         }).
         error(function(data, status, headers, config) {
