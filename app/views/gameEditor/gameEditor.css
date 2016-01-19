@@ -19,3 +19,7 @@
 .game-confirm {
     padding-bottom: 5%;
 }
+
+.newgame-button {
+    position: fixed;
+}

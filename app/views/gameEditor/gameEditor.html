@@ -4,77 +4,82 @@ if(token == null)
 {
     document.location.href = "../login/login.html";
 }</script>
-<div ng-controller ="inputController as controller" ng-cloak class="md-inline-form">
-<md-content ng-controller ="inputController as controller" layout-margin layout="column" layout-align="center center" class = "game-confirm">
-
-    <md-whiteframe class= "md-whiteframe-3dp" layout ="column">
-        <md-toolbar flex>
-            <h3 layout="column" layout-align="center center">Voeg game toe</h3>
-        </md-toolbar>
-
-        <md-content layout-margin layout-fill>
-            <form name="userForm">
-                <md-input-container class="md-block">
-                    <label>Titel</label>
-                    <textarea layout-margin ng-model="controller.game.title" columns="1" md-maxlength="20" rows="5"></textarea>
-                </md-input-container>
-
-                <md-input-container class="md-block">
-                    <label>Mapbox id</label>
-                    <textarea layout-margin ng-model="controller.game.id" columns="1" md-maxlength="150" rows="5"></textarea>
-                </md-input-container>
-
-                <h5 class= "custom-input-label" style="text-align: center">Straf tijd in minuten</h5>
 
 
-                <md-slider layout-margin md-discrete class="md-primary" ng-model="controller.game.punishTime" step="1" min="1" max="5" aria-label="rating">
-                </md-slider>
+<md-button layout="row" layout-align="end end" class="md-fab newgame-button" ng-disabled="false" aria-label="Comment">
+    <md-icon md-svg-src="img/icons/ic_comment_24px.svg"></md-icon>
+</md-button>
 
-            </form>
+<div>
 
-            <md-button ng-disabled="!controller.validInput()" flex ng-click="controller.sendGameData()" md-no-ink class="md-primary">Stuur</md-button>
+    <md-content ng-controller ="inputController as controller" layout-margin layout="column" layout-align="center center" class = "game-confirm">
 
-        </md-content>
+        <md-whiteframe class= "md-whiteframe-3dp" layout ="column">
+            <md-toolbar flex>
+                <h3 layout="column" layout-align="center center">Voeg game toe</h3>
+            </md-toolbar>
 
-    </md-whiteframe>
+            <md-content layout-margin layout-fill>
+                <form name="userForm">
+                    <md-input-container class="md-block">
+                        <label>Titel</label>
+                        <textarea layout-margin ng-model="controller.game.title" columns="1" md-maxlength="20" rows="5"></textarea>
+                    </md-input-container>
 
-</md-content>
+                    <md-input-container class="md-block">
+                        <label>Mapbox id</label>
+                        <textarea layout-margin ng-model="controller.game.id" columns="1" md-maxlength="150" rows="5"></textarea>
+                    </md-input-container>
+
+                    <h5 class= "custom-input-label" style="text-align: center">Straf tijd in minuten</h5>
 
 
-<md-content ng-controller="tableController as controller" layout-margin class = "full-table">
-    <md-whitefram class="md-whiteframe-3dp" layout="column">
+                    <md-slider layout-margin md-discrete class="md-primary" ng-model="controller.game.punishTime" step="1" min="1" max="5" aria-label="rating">
+                    </md-slider>
 
-        <md-toolbar layout="column" flex>
-            <h3 layout="column" layout-align="center center">Game tabel</h3>
-        </md-toolbar>
+                </form>
 
-        <table>
-            <md-list>
-                <md-list-item  layout="row" layout-fill class = "table-item-header">
-                        <div flex="25" layout-padding>Titel</div>
-                        <div flex="25" layout-padding>Mapbox ID</div>
-                        <div flex="25" layout-padding>Straf tijd</div>
-                        <div flex="25" layout-padding>4de item</div>
-                </md-list-item>
+                <md-button ng-disabled="!controller.validInput()" flex ng-click="controller.sendGameData()" md-no-ink class="md-primary">Stuur</md-button>
 
-                <md-list-item ng-repeat="game in controller.games" ng-click="controller.getGames()" layout="row" layout-fill class = "table-item ">
-                    <div flex="25" layout-padding>{{game.title}}</div>
-                    <div flex="25" layout-padding>{{game.id}}</div>
-                    <div flex="25" layout-padding>{{game.punishTime}}</div>
-                    <div flex="25" layout-padding>no clue</div>
-                </md-list-item>
+            </md-content>
 
-                <md-list-item  layout="row" layout-fill class = "table-item ">
-                    <div flex="25" layout-padding>Voorbeeld 2</div>
-                    <div flex="25" layout-padding>id?=gddj65KLs</div>
-                    <div flex="25" layout-padding>1.0</div>
-                    <div flex="25" layout-padding>no clue</div>
-                </md-list-item>
-            </md-list>
-        </table>
+        </md-whiteframe>
 
-    </md-whitefram>
+    </md-content>
 
-</md-content>
+    <md-content ng-controller="tableController as controller" layout-margin class = "full-table">
+        <md-whitefram class="md-whiteframe-3dp" layout="column">
+
+            <md-toolbar layout="column" flex>
+                <h3 layout="column" layout-align="center center">Game tabel</h3>
+            </md-toolbar>
+
+            <table>
+                <md-list>
+                    <md-list-item  layout="row" layout-fill class = "table-item-header">
+                        <div flex="33" layout-padding>Titel</div>
+                        <div flex="33" layout-padding>Mapbox ID</div>
+                        <div flex="33" layout-padding>Straf tijd</div>
+                    </md-list-item>
+
+                    <md-list-item ng-repeat="game in controller.games" ng-click="controller.getGames()" layout="row" layout-fill class = "table-item ">
+                        <div flex="33" layout-padding>{{game.title}}</div>
+                        <div flex="33" layout-padding>{{game.id}}</div>
+                        <div flex="33" layout-padding>{{game.punishTime}}</div>
+                    </md-list-item>
+
+                    <md-list-item  layout="row" layout-fill class = "table-item ">
+                        <div flex="33" layout-padding>Voorbeeld 2</div>
+                        <div flex="33" layout-padding>id?=gddj65KLs</div>
+                        <div flex="33" layout-padding>1.0</div>
+                    </md-list-item>
+                </md-list>
+            </table>
+
+        </md-whitefram>
+
+    </md-content>
+
+</div>
 
 
