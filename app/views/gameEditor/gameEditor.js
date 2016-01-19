@@ -15,9 +15,9 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
       //self.game = function(){};
 
       self.game = {
-       title : null,
-        id: null,
-          punishTime: null
+       description : null,
+        locationId: null,
+          timeOut: null
       };
         /**checks if the user input is valid for sending
          *
@@ -25,14 +25,14 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
          */
         self.validInput = function(){
 
-            var title = self.game.title;
-            var id = self.game.id;
-            var punishTime = self.game.punishTime;
+            var title = self.game.description;
+            var mapBoxId = self.game.locationId;
+            var punishTime = self.game.timeOut;
 
             if(title == null || title.length == 0){
                 return false;
             }
-            if(id == null || id.length == 0){
+            if(mapBoxId == null || mapBoxId.length == 0){
                 return false;
             }
             return !(punishTime == null || punishTime <= 0);
@@ -66,14 +66,15 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     }])
 
     /* TABLE */
-    .controller('tableController', ['$http', function ($http) {
+    .controller('tableController', ['$http', '$location' , function ($http, $location) {
 
         var self = this;
-        self.games = function(){};
-        self.games = [
-            {title: "test", id: "testId", punishTime: 10}
-        ];
 
+
+
+        self.editGame = function(game){
+
+        }
         // TODO TOKEN HEADER, CORRECT LINK
         var config = {
             headers: {

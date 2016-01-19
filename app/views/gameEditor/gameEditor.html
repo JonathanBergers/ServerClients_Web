@@ -23,18 +23,18 @@ if(token == null)
                 <form name="userForm">
                     <md-input-container class="md-block">
                         <label>Titel</label>
-                        <textarea layout-margin ng-model="controller.game.title" columns="1" md-maxlength="20" rows="5"></textarea>
+                        <textarea layout-margin ng-model="controller.game.description" columns="1" md-maxlength="20" rows="5"></textarea>
                     </md-input-container>
 
                     <md-input-container class="md-block">
                         <label>Mapbox id</label>
-                        <textarea layout-margin ng-model="controller.game.id" columns="1" md-maxlength="150" rows="5"></textarea>
+                        <textarea layout-margin ng-model="controller.game.locationId" columns="1" md-maxlength="150" rows="5"></textarea>
                     </md-input-container>
 
                     <h5 class= "custom-input-label" style="text-align: center">Straf tijd in minuten</h5>
 
 
-                    <md-slider layout-margin md-discrete class="md-primary" ng-model="controller.game.punishTime" step="1" min="1" max="5" aria-label="rating">
+                    <md-slider layout-margin md-discrete class="md-primary" ng-model="controller.game.timeOut" step="1" min="1" max="5" aria-label="rating">
                     </md-slider>
 
                 </form>
@@ -62,17 +62,19 @@ if(token == null)
                         <div flex="33" layout-padding>Straf tijd</div>
                     </md-list-item>
 
-                    <md-list-item ng-repeat="game in controller.games" ng-click="controller.getGames()" layout="row" layout-fill class = "table-item ">
-                        <div flex="33" layout-padding>{{game.title}}</div>
-                        <div flex="33" layout-padding>{{game.id}}</div>
-                        <div flex="33" layout-padding>{{game.punishTime}}</div>
+
+
+                    <md-list-item ng-repeat="game in controller.games" layout="row" ng-click="controller.editGame(game)" layout-fill class = "table-item ">
+                        <div flex="33" layout-padding>{{game.description}}</div>
+                        <div flex="33" layout-padding>{{game.locationId}}</div>
+                        <div flex="33" layout-padding>{{game.timeOut}}</div>
+
                     </md-list-item>
 
-                    <md-list-item  layout="row" layout-fill class = "table-item ">
-                        <div flex="33" layout-padding>Voorbeeld 2</div>
-                        <div flex="33" layout-padding>id?=gddj65KLs</div>
-                        <div flex="33" layout-padding>1.0</div>
-                    </md-list-item>
+                    <!--<md-list-item ng-repeat="game in controller.games" ng-click="controller.getGames()" layout="row" layout-fill class = "table-item ">-->
+       <!---->
+                    <!--</md-list-item>-->
+
                 </md-list>
             </table>
 

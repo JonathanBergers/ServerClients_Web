@@ -36,6 +36,6 @@ appModule.controller('NavController', ['$scope', function($scope, $mdSidenav) {
 
 
   //ADD TABS FOR VIEWS
-  $scope.tabs = [ {title: "Games", url: "#/gameOverview"}, {title: "Users", url: "#/users"}];
+  $scope.tabs = [ {description: "Games", url: "#/gameOverview"}, {description: "Users", url: "#/users"}];
 }]);
 
