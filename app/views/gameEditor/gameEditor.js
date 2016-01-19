@@ -10,35 +10,88 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
     }])
 
     /* FORM */
-    .controller('inputController', [function () {
+    .controller('inputController', ['$http', function ($http) {
       var self = this;
-      self.game = function(){};
+      //self.game = function(){};
 
       self.game = {
-        mapbox_id: ''
+       title : null,
+        id: null,
+          punishTime: null
       };
+        /**checks if the user input is valid for sending
+         *
+         * @returns {boolean}
+         */
+        self.validInput = function(){
+
+            var title = self.game.title;
+            var id = self.game.id;
+            var punishTime = self.game.punishTime;
+
+            if(title == null || title.length == 0){
+                return false;
+            }
+            if(id == null || id.length == 0){
+                return false;
+            }
+            return !(punishTime == null || punishTime <= 0);
+
+    };
 
       self.sendGameData = function() {
-          var jsonString = JSON.stringify(self.game);
-      }
+
+          var config = {
+              headers: {
+                  "token": sessionStorage.getItem('token')
+              }
+          }
+          var gamesEndpoint = "http://zaxion.nl/api/games"
+          var token = sessionStorage.getItem('token').
+
+          $http.post(gamesEndpoint, JSON.stringify(self.game), config).
+          success(function(data, status, headers, config) {
+              window.alert(" SUCCESS "  +data + status)
+              self.games = data
+          }).
+          error(function(data, status, headers, config) {
+              window.alert("error posting game " + data + " " + status)
+              // log error
+          });
+
+
+      };
 
       return true;
     }])
 
     /* TABLE */
-    .controller('tableController', [function () {
-      var self = this;
-      self.games = function(){};
+    .controller('tableController', ['$http', function ($http) {
 
-      self.games;
+        var self = this;
+        self.games = function(){};
+        self.games = [
+            {title: "test", id: "testId", punishTime: 10}
+        ];
 
-      self.getGames = function() {
+        // TODO TOKEN HEADER, CORRECT LINK
+        var config = {
+            headers: {
+                "token": sessionStorage.getItem('token')
+            }
+        }
+        var gamesEndpoint = "http://zaxion.nl/api/games"
+        $http.get(gamesEndpoint, config).
+        success(function(data, status, headers, config) {
+            window.alert(data)
+            self.games = data
+        }).
+        error(function(data, status, headers, config) {
+            window.alert("error retrieving games" + data + " " + status)
+            // log error
+        });
 
-      }
 
-      self.getJSON = function() {
-
-      }
 
       return true;
     }]);;

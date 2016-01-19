@@ -1,8 +1,8 @@
 
-var login = angular.module('myapp.login',['ngMaterial', 'ngRoute','ngStorage']);
+var login = angular.module('myapp.login',['ngMaterial', 'ngRoute']);
 
 
-login.controller('loginController', function ($http,$localStorage) {
+login.controller('loginController', function ($http) {
     var self = this;
 
     self.control = function () {
@@ -15,21 +15,13 @@ login.controller('loginController', function ($http,$localStorage) {
         };
         $http.get("http://zaxion.nl/api/login/", config).
         success(function(data, status, headers, config) {
-            // this callback will be called asynchronously
-            // when the response is available
-            window.alert("inlog juist");
-            window.alert(data);
-            self.save = function() {
-                $localStorage.token = data;
-            }
+            sessionStorage.setItem("token", data);
             document.location.href = "../../index.html";
         }).
         error(function(data, status, headers, config) {
-            window.alert("inlog onjuis");
-            window.alert(data);
-            window.alert(status);
-            window.alert(headers);
-
+            self.name = "";
+            self.password = "";
+            window.alert("inlog gegevens zijn onjuist");
         });
     }
 });
