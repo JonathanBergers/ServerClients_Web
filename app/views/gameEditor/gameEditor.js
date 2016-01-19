@@ -72,7 +72,7 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
 
 
         self.editGame = function(game){
-            window.location.href= "http://www.mapbox.com/editor/" + game.locationId
+            window.location.href= "http://www.mapbox.com/editor/?id=" + game.locationId
 
         }
         // TODO TOKEN HEADER, CORRECT LINK
@@ -91,8 +91,6 @@ angular.module('myApp.gameEditor', ['ngRoute', 'ngMaterial'])
             window.alert("error retrieving games" + data + " " + status)
             // log error
         });
-
-
 
       return true;
     }]);;
